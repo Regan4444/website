@@ -7,26 +7,50 @@
 </head>
 <body>
     <form>
-        <p>What assignments do you  need to complete for this section of the module?</p>
-        <input type="radio" name="question1" value="PA"> PA<br>
-        <input type="radio" name="question1" value="CA"> CA<br>
-        <input type="radio" name="question1" value="LA"> LA<br>
-        <input type="radio" name="question1" value="All of these"> All of these<br><br>
-        <button type="button" onclick="checkAnswer()">Submit</button>
+        <p>What is the capital of France?</p>
+        <input type="radio" name="question1" value="Paris"> Paris<br>
+        <input type="radio" name="question1" value="London"> London<br>
+        <input type="radio" name="question1" value="Berlin"> Berlin<br>
+        <input type="radio" name="question1" value="Madrid"> Madrid<br><br>
+        
+        <p>What is 2 + 2?</p>
+        <input type="radio" name="question2" value="3"> 3<br>
+        <input type="radio" name="question2" value="4"> 4<br>
+        <input type="radio" name="question2" value="5"> 5<br>
+        <input type="radio" name="question2" value="6"> 6<br><br>
+        
+        <p>Which planet is known as the Red Planet?</p>
+        <input type="radio" name="question3" value="Earth"> Earth<br>
+        <input type="radio" name="question3" value="Mars"> Mars<br>
+        <input type="radio" name="question3" value="Jupiter"> Jupiter<br>
+        <input type="radio" name="question3" value="Venus"> Venus<br><br>
+        
+        <button type="button" onclick="checkAnswers()">Submit</button>
     </form>
 
     <script>
-        function checkAnswer() {
-            var selectedAnswer = document.querySelector('input[name="question1"]:checked');
-            if (selectedAnswer) {
-                if (selectedAnswer.value === "All of these") {
-                    alert("Correct!");
-                } else {
-                    alert("Incorrect. Try again!");
-                }
-            } else {
-                alert("Please select an answer.");
+        function checkAnswers() {
+            let correctAnswers = 0;
+
+            // Question 1
+            const answer1 = document.querySelector('input[name="question1"]:checked');
+            if (answer1 && answer1.value === "Paris") {
+                correctAnswers++;
             }
+
+            // Question 2
+            const answer2 = document.querySelector('input[name="question2"]:checked');
+            if (answer2 && answer2.value === "4") {
+                correctAnswers++;
+            }
+
+            // Question 3
+            const answer3 = document.querySelector('input[name="question3"]:checked');
+            if (answer3 && answer3.value === "Mars") {
+                correctAnswers++;
+            }
+
+            alert(`You got ${correctAnswers} out of 3 questions correct.`);
         }
     </script>
 </body>
