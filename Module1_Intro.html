@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+</head>
+<body>
+    <form>
+        <p>What assignments do you  need to complete for this section of the module?</p>
+        <input type="radio" name="question1" value="PA"> PA<br>
+        <input type="radio" name="question1" value="CA"> CA<br>
+        <input type="radio" name="question1" value="LA"> LA<br>
+        <input type="radio" name="question1" value="All of these"> All of these<br><br>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
+
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="question1"]:checked');
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "All of these") {
+                    alert("Correct!");
+                } else {
+                    alert("Incorrect. Try again!");
+                }
+            } else {
+                alert("Please select an answer.");
+            }
+        }
+    </script>
+</body>
+</html>
