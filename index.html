@@ -1,23 +1,33 @@
-<form>
-  <p>What is the capital of France?</p>
-  <input type="radio" name="question1" value="Paris"> Paris<br>
-  <input type="radio" name="question1" value="London"> London<br>
-  <input type="radio" name="question1" value="Berlin"> Berlin<br>
-  <input type="radio" name="question1" value="Madrid"> Madrid<br><br>
-  <button type="button" onclick="checkAnswer()">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+</head>
+<body>
+    <form>
+        <p>What is the capital of France?</p>
+        <input type="radio" name="question1" value="Paris"> Paris<br>
+        <input type="radio" name="question1" value="London"> London<br>
+        <input type="radio" name="question1" value="Berlin"> Berlin<br>
+        <input type="radio" name="question1" value="Madrid"> Madrid<br><br>
+        <button type="button" onclick="checkAnswer()">Submit</button>
+    </form>
 
-<script>
-  function checkAnswer() {
-    var selectedAnswer = document.querySelector('input[name="question1"]:checked');
-    if (selectedAnswer) {
-      if (selectedAnswer.value === "Paris") {
-        alert("Correct!");
-      } else {
-        alert("Incorrect. Try again!");
-      }
-    } else {
-      alert("Please select an answer.");
-    }
-  }
-</script>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="question1"]:checked');
+            if (selectedAnswer) {
+                if (selectedAnswer.value === "Paris") {
+                    alert("Correct!");
+                } else {
+                    alert("Incorrect. Try again!");
+                }
+            } else {
+                alert("Please select an answer.");
+            }
+        }
+    </script>
+</body>
+</html>
